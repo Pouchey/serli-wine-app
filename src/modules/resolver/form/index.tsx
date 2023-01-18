@@ -58,7 +58,7 @@ export default () => {
         navigate('/results', { state: res.data });
       }
     } else {
-      setError('Veuillez selectionner une image');
+      setError('Veuillez sélectionner une image');
     }
   };
 
