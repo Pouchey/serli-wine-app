@@ -1,0 +1,10 @@
+.search-wrapper{
+  position: relative;
+  min-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .search-wrapper{
+    min-width: 300px;
+  }
+}

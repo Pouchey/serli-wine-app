@@ -1,0 +1,64 @@
+#app{
+  display:grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 50px 1fr ;
+  grid-template-areas: "header" "main" "footer";
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-header{
+  grid-area: header;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+}
+
+.app-main{
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-header-left{
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.app-title{
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.chevron{
+  font-size: 1.5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.chevron:hover{
+  color: #53b3cb;
+}
+
+@media (max-width: 768px) {
+  #app{
+    grid-template-rows: 100px 1fr ;
+  }
+  .app-header{
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 0 1em;
+  }
+  .app-title{
+    font-size: 1.5em;
+  }
+  .chevron{
+    font-size: 1em;
+  }
+}
