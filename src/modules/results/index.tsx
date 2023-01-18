@@ -28,6 +28,16 @@ export default () => {
     if (id) navigate(`/wine/${id}`);
   };
 
+  const getItemSize = (index: number) => {
+    if (matches) {
+      if (index === 0) return 250;
+      else return 150;
+    } else {
+      if (index === 0) return 200;
+      else return 100;
+    }
+  };
+
   useEffect(() => {
     void getWines(state.imageIds).then((wines) => setWines(wines));
   }, [state.imageIds]);
@@ -38,21 +48,59 @@ export default () => {
   return (
     <div className="result">
       <h1 className="result-title">Choix du bon résultat</h1>
+      {
+        wines?.length && (
+          <p 
+            className="result-item best"
+            onClick={() => handleClick(wines[0]?.wine?.ID || null)}
+          >
+            {wines[0]?.image ? (
+              <Image
+                src={wines[0]?.image}
+                alt={wines[0].wine?.NOM || 'vin'}
+                size={getItemSize(0)}
+              />
+            ) : (
+              <WineSvg
+                style={{
+                  width: getItemSize(0),
+                  height: getItemSize(0),
+                }}
+              />
+            )}
+            <div className="result-item-info">
+              <h2 className="result-item-name">{wines[0].wine?.NOM}</h2>
+              <h3 className="result-item-domain">{wines[0].wine?.APPELLATION}</h3>
+            </div>
+          </p>
+        )
+      }
+      <div className="result-items">
       {wines?.map((wine, index) => {
+        if (index === 0) return null;
         return (
           <div
             key={index}
             className="result-item"
             onClick={() => handleClick(wine?.wine?.ID || null)}
+            style={{
+              width: getItemSize(index),
+              height: getItemSize(index),
+            }}
           >
             {wine?.image ? (
               <Image
                 src={wine?.image}
                 alt={wine.wine?.NOM || 'vin'}
-                size={matches ? 200 : 100}
+                size={getItemSize(index)}
               />
             ) : (
-              <WineSvg />
+              <WineSvg 
+                style={{
+                  width: getItemSize(index),
+                  height: getItemSize(index),
+                }}
+              />
             )}
             <div className="result-item-info">
               <h2 className="result-item-name">{wine.wine?.NOM}</h2>
@@ -61,6 +109,7 @@ export default () => {
           </div>
         );
       })}
+      </div>
     </div>
   );
 };
