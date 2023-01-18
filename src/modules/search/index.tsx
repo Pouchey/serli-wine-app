@@ -19,14 +19,11 @@ export default () => {
   const setOutFocus = () => setFocus(false);
 
   const fetchData = async () => {
-    const { data } = await axios.get<WineResponseData[]>(
-      '/api/search',
-      {
-        params: {
-          q: value,
-        },
-      }
-    );
+    const { data } = await axios.get<WineResponseData[]>('/api/search', {
+      params: {
+        q: value,
+      },
+    });
     if (data.length > 0) {
       setData(data);
     }

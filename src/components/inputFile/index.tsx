@@ -9,9 +9,7 @@ interface InputFileProps {
 
 export default ({ onSelect, preview }: InputFileProps) => {
   return (
-    <div className={
-      `input-wrapper ${preview ? 'preview' : ''}`
-    }>
+    <div className={`input-wrapper ${preview ? 'preview' : ''}`}>
       {preview && (
         <div className="input-preview">
           <Image src={preview} alt="image-selected" size={200} />
@@ -19,16 +17,13 @@ export default ({ onSelect, preview }: InputFileProps) => {
       )}
       <input
         type="file"
-        id='input-file'
-        placeholder='Choisir une image'
+        id="input-file"
+        placeholder="Choisir une image"
         accept="image/*"
         className="input-file"
         onChange={onSelect}
       />
-      {!preview && (
-        <div className="input-zone"></div>
-      )  }
-      
+      {!preview && <div className="input-zone"></div>}
     </div>
   );
 };
