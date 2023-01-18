@@ -19,20 +19,28 @@ export default () => {
   const setOutFocus = () => setFocus(false);
 
   const fetchData = async () => {
-    const { data } = await axios.get<WineResponseData[]>('/api/search', {
-      params: {
-        q: value,
-      },
-    });
-    if (data.length > 0) {
-      setData(data);
+    try{
+      const res= await axios.get<WineResponseData[]>('/api/search', {
+        params: {
+          q: value,
+        },
+      })
+      return res.data;
+    }
+    catch(e){
+      console.error(e);
     }
   };
 
   useEffect(() => {
     if (value.length) {
       setIsLoading(true);
-      void fetchData().then(() => setIsLoading(false));
+      void fetchData().then((data) => 
+        {
+          if(data) setData(data);
+          setIsLoading(false)
+        }
+      );
     } else {
       setData([]);
     }
