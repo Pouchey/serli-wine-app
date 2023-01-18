@@ -9,7 +9,7 @@
     "lint:scripts": "eslint --fix --ext .ts,.tsx src",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "lint:all": "npm run lint:scripts && npm run format",
-    "start": "npm run build && npm run preview"
+    "start": "npm run build && vite preview"
     
   },
   "dependencies": {
