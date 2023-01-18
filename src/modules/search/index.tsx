@@ -20,7 +20,7 @@ export default () => {
 
   const fetchData = async () => {
     const { data } = await axios.get<WineResponseData[]>(
-      'http://localhost:8080/api/search',
+      '/api/search',
       {
         params: {
           q: value,

@@ -6,9 +6,9 @@
   grid-gap: 40px;
   width: auto;
   padding: 40px;
-  background-color: #1e1e1e;
+  background-color: var(--color-dark-2);
   border-radius: 4px;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px var(--color-dark-3);
 }
 
 .result-title{
@@ -36,7 +36,7 @@
   padding: 20px;;
   background-color: rgba(0,0,0,0.7);
   border-radius: 4px;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px var(--color-dark-3);
   opacity: 0;
   transition: opacity 0.3s;
 }

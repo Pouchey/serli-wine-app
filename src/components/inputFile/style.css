@@ -7,13 +7,13 @@
   justify-content: center;
   width: 200px;
   height: 200px;
-  background-color: #242424;
+  background-color: var(--color-dark-2);
   border-radius: 4px;
-  border: 2px solid #53b3cb;
+  border: 2px solid var(--color-primary);
 }
 
 .input-wrapper:hover{
-  background-color: #1e1e1e;
+  background-color: var(--color-dark);
 }
 
 .input-file{
@@ -32,7 +32,7 @@
   align-items: center;
   width: 140px;
   height: 140px;
-  border: 3px dashed #53b3cb;
+  border: 3px dashed var(--color-primary);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -40,7 +40,7 @@
 .input-zone::before{
   content: "+";
   font-size: 5em;
-  color: #53b3cb;
+  color: var(--color-primary);
 }
 
 

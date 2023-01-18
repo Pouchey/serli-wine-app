@@ -4,9 +4,9 @@
   grid-column-gap: 20px;
   width: auto;
   padding: 40px;
-  background-color: #1e1e1e;
+  background-color: var(--color-dark);
   border-radius: 4px;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px var(--color-dark-3);
 }
 
 .wine-info{
