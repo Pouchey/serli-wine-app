@@ -62,6 +62,7 @@
 
 .result-item-info:hover{
   opacity: 1;
+  cursor: pointer;
 }
 
 .result-item-probability{
