@@ -11,6 +11,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 
 interface LocationState {
   imageIds: number[];
+  probabilities: number[];
 }
 
 export default () => {
@@ -67,6 +68,11 @@ export default () => {
               }}
             />
           )}
+          <div className="result-item-probability">
+            <p className="result-item-probability-value">
+              {state.probabilities[0]}%
+            </p>
+          </div>
           <div className="result-item-info">
             <h2 className="result-item-name">{wines[0].wine?.NOM}</h2>
             <h3 className="result-item-domain">{wines[0].wine?.APPELLATION}</h3>
@@ -100,6 +106,11 @@ export default () => {
                   }}
                 />
               )}
+              <div className="result-item-probability">
+                <p className="result-item-probability-value">
+                  {state.probabilities[index]}%
+                </p>
+              </div>
               <div className="result-item-info">
                 <h2 className="result-item-name">{wine.wine?.NOM}</h2>
                 <h3 className="result-item-domain">{wine.wine?.APPELLATION}</h3>

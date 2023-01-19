@@ -19,15 +19,14 @@ export default () => {
   const setOutFocus = () => setFocus(false);
 
   const fetchData = async () => {
-    try{
-      const res= await axios.get<WineResponseData[]>('/api/search', {
+    try {
+      const res = await axios.get<WineResponseData[]>('/api/search', {
         params: {
           q: value,
         },
-      })
+      });
       return res.data;
-    }
-    catch(e){
+    } catch (e) {
       console.error(e);
     }
   };
@@ -35,12 +34,10 @@ export default () => {
   useEffect(() => {
     if (value.length) {
       setIsLoading(true);
-      void fetchData().then((data) => 
-        {
-          if(data) setData(data);
-          setIsLoading(false)
-        }
-      );
+      void fetchData().then((data) => {
+        if (data) setData(data);
+        setIsLoading(false);
+      });
     } else {
       setData([]);
     }
