@@ -10,8 +10,12 @@ import Results from './modules/results';
 // setting axios
 import axios from 'axios';
 import Wine from './modules/wine';
-// axios.defaults.baseURL = 'https://serli-wine-api.cleverapps.io/';
-axios.defaults.baseURL = 'http://localhost:8080/';
+
+console.log(import.meta.env.MODE);
+if(import.meta.env.MODE === 'prod') 
+  axios.defaults.baseURL = 'https://serli-wine-api.cleverapps.io/';
+else
+  axios.defaults.baseURL = 'http://localhost:8080/';
 
 const router = createBrowserRouter([
   {
