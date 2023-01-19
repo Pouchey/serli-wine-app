@@ -11,7 +11,6 @@ import Results from './modules/results';
 import axios from 'axios';
 import Wine from './modules/wine';
 
-console.log(import.meta.env.MODE);
 if(import.meta.env.MODE === 'prod') 
   axios.defaults.baseURL = 'https://serli-wine-api.cleverapps.io/';
 else
