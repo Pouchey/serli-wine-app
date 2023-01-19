@@ -21,8 +21,10 @@ const Item = ({ item }: { item: WineResponseData }) => {
     <div className="search-option" onClick={handleClick}>
       <WineSvg
         style={{
-          width: '40x',
+          width: '40px',
           height: '40px',
+          minWidth: '40px',
+          minHeight: '40px',
         }}
       />
       <div className="search-option-content">
