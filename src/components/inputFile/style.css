@@ -12,6 +12,10 @@
   border: 2px solid var(--color-primary);
 }
 
+.input-wrapper.preview{
+  border:none;
+}
+
 .input-wrapper:hover{
   background-color: var(--color-dark);
 }
